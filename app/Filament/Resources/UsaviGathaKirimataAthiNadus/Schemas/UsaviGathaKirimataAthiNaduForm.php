@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Nadus\Schemas;
+namespace App\Filament\Resources\UsaviGathaKirimataAthiNadus\Schemas;
 
 use App\Models\Samithi;
 use Filament\Forms\Components\DatePicker;
@@ -8,33 +8,32 @@ use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-class NaduForm
+class UsaviGathaKirimataAthiNaduForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextInput::make('year')
-                    ->required(),
+                    ->disabled(),
 
                 TextInput::make('thiraka_no')
-                    ->required(),
+                    ->disabled(),
 
                 Select::make('samithiya')
-                    ->label('Samithiya')
                     ->options(
                         Samithi::orderBy('samithiya')
                             ->pluck('samithiya', 'samithiya')
                             ->toArray()
                     )
-                    ->searchable()
-                    ->preload()
-                    ->required(),
+                    ->disabled(),
 
                 DatePicker::make('recieved_date')
-                    ->required(),
+                    ->disabled(),
 
-                TextInput::make('nadu_no'),
+                TextInput::make('nadu_no')
+                    ->label('නඩු අංකය')
+                    ->required(),
             ]);
     }
 }

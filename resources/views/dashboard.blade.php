@@ -12,6 +12,13 @@
             ණය නඩු කළමනාකරණ පද්ධතිය
         </h1>
 
+        <div class="mb-6">
+            <a href="{{ route('report.generate') }}"
+            class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">
+                📄 Generate PDF Report
+            </a>
+        </div>
+
         <div class="grid grid-cols-4 gap-4">
             <div class="bg-white shadow p-4 rounded">
                 <h3>Total Cases</h3>

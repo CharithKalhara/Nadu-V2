@@ -11,7 +11,6 @@ class DatabaseStatusWidget extends BaseWidget
 {
     protected function getStats(): array
     {
-        // DB connection check
         try {
             DB::connection()->getPdo();
             $status = 'Connected';
@@ -21,7 +20,6 @@ class DatabaseStatusWidget extends BaseWidget
             $color = 'danger';
         }
 
-        // MySQL uptime
         $uptimeSeconds = DB::select("SHOW STATUS LIKE 'Uptime'")[0]->Value ?? 0;
         $uptime = $this->formatUptime($uptimeSeconds);
 
@@ -31,6 +29,15 @@ class DatabaseStatusWidget extends BaseWidget
 
             Stat::make('MySQL Uptime', $uptime)
                 ->description('Server running time'),
+
+            Stat::make(
+                'උසාවි ගත කිරීමට ඇති නඩු',
+                Nadu::whereNull('nadu_no')
+                    ->orWhere('nadu_no', '')
+                    ->count()
+            )
+            ->description('නඩු අංකය ලබා දී නොමැති')
+            ->color('warning'),
 
             Stat::make('Total Nadu Records', Nadu::count()),
         ];

@@ -22,6 +22,11 @@ class NaduResource extends Resource
 
     protected static ?string $recordTitleAttribute = 'samithiya';
 
+    // Add these
+    protected static ?string $navigationLabel = 'නඩු';
+    protected static ?string $modelLabel = 'Record';
+    protected static ?string $pluralModelLabel = 'නඩු';
+
     public static function form(Schema $schema): Schema
     {
         return NaduForm::configure($schema);
@@ -34,9 +39,7 @@ class NaduResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            //
-        ];
+        return [];
     }
 
     public static function getPages(): array
