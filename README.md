@@ -26,23 +26,23 @@ Built using Laravel and Filament, the application provides a secure, scalable, a
 
 ### Dashboard
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](docs/dashboard.png)
 
 ### Court Records
 
-![Records](screenshots/records.png)
+![Records](docs/records.png)
 
 ### Create Record
 
-![Create](screenshots/create.png)
+![Create](docs/create.png)
 
 ### Edit Record
 
-![Edit](screenshots/edit.png)
+![Edit](docs/edit.png)
 
 ### PDF Report
 
-![Report](screenshots/report.png)
+![Report](docs/report.png)
 
 ---
 
